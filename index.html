@@ -341,20 +341,20 @@
 
         function getAdvice(rainProb, maxTemp) {
             let rainIcon = "🌂";
-            let rainText = "不用帶傘喔!";
+            let rainText = "不用帶喔!";
             if (parseInt(rainProb) > 30) {
                 rainIcon = "☂️";
-                rainText = "記得帶傘喔！";
+                rainText = "記得帶傘！";
             }
 
             let clothIcon = "👕";
             let clothText = "舒適穿搭就好!";
             if (parseInt(maxTemp) >= 28) {
                 clothIcon = "🎽";
-                clothText = "短袖出發吧!";
+                clothText = "短袖出發";
             } else if (parseInt(maxTemp) <= 20) {
                 clothIcon = "🧥";
-                clothText = "加件外套吧!";
+                clothText = "加外套吧!";
             }
 
             return { rainIcon, rainText, clothIcon, clothText };
