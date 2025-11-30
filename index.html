@@ -341,20 +341,20 @@
 
         function getAdvice(rainProb, maxTemp) {
             let rainIcon = "🌂";
-            let rainText = "不用帶傘";
+            let rainText = "不用帶傘喔!";
             if (parseInt(rainProb) > 30) {
                 rainIcon = "☂️";
-                rainText = "記得帶傘！";
+                rainText = "記得帶傘喔！";
             }
 
             let clothIcon = "👕";
-            let clothText = "舒適穿搭";
+            let clothText = "舒適穿搭就好!";
             if (parseInt(maxTemp) >= 28) {
                 clothIcon = "🎽";
-                clothText = "短袖出發";
+                clothText = "短袖出發吧!";
             } else if (parseInt(maxTemp) <= 20) {
                 clothIcon = "🧥";
-                clothText = "加件外套";
+                clothText = "加件外套吧!";
             }
 
             return { rainIcon, rainText, clothIcon, clothText };
@@ -462,7 +462,7 @@
                 }
             } catch (e) {
                 console.error(e);
-                alert("天氣資料讀取失敗，狸克把網路線咬斷了！");
+                alert("天氣資料讀取失敗，狸克把網路線咬斷了！顆顆~n請稍後再試。");
             }
         }
 
