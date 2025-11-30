@@ -14,7 +14,10 @@
         rel="stylesheet">
 
     <style>
+         
+         
         :root {
+         /*
             --ac-green: #7DE1A9;
             --ac-bg-pattern: #8FD8AF;
             --ac-cream: #FFFEF2;
@@ -23,23 +26,46 @@
             --ac-blue: #4FB5D9;
             --ac-dark: #58504A;
             --ac-card-border: #E6E0C8;
+        */
+        /* === 神隱少女 風格配色 === */
+        --ac-green: #95B8B0; /* 湯屋外牆/霧氣青綠 */
+        --ac-bg-pattern: #8FD8AF; /* 此變數不再使用，直接在 body 定義 */
+        --ac-cream: #F5EFE1; /* 和紙米白/卡片底色 */
+        --ac-yellow: #E9C46A; /* 油燈暖黃/地點標籤 */
+        --ac-brown: #4E3932; /* 深木棕/重要文字 */
+        --ac-blue: #5A779C; /* 沉靜靛青/對話框 */
+        --ac-dark: #3A3029; /* 深墨黑/主文字 */
+        --ac-card-border: #C3B5A8; /* 陳舊土色/邊框 */
         }
+        
 
-        * {
+        
+
+        * { 
+            
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             -webkit-tap-highlight-color: transparent;
-        }
+          
+            }
 
         body {
             font-family: 'Zen Maru Gothic', sans-serif;
             background-color: var(--ac-green);
+            
             /* 更細緻的斜紋背景 */
-            background-image:
+            /*background-image:
                 repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255, 255, 255, 0.2) 20px, rgba(255, 255, 255, 0.2) 40px);
             min-height: 100vh;
             color: var(--ac-dark);
+             */
+           /* 霧氣感/和紙感的斜紋背景 - 改為更柔和的半透明白 */
+            background-image:
+            repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255, 255, 255, 0.1) 20px, rgba(255, 255, 255, 0.1) 40px);
+            min-height: 100vh;
+            color: var(--ac-dark);
+            
             /* 防止 iOS 左右滑動 */
             overflow-x: hidden;
             padding-bottom: 20px;
@@ -47,20 +73,33 @@
 
         /* 頂部狀態列 */
         .status-bar {
+
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 20px;
+            /*
             background: rgba(255, 255, 255, 0.3);
             backdrop-filter: blur(10px);
+            */
+              /* 調整背景模糊層，讓它更像霧氣或水面 */
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
         .location-pill {
+           /*
             background: var(--ac-yellow);
             color: var(--ac-brown);
+            */
+        /* 保持油燈暖黃的配色 */
+                background: var(--ac-yellow);
+                color: var(--ac-brown);
+
             padding: 5px 15px;
             border-radius: 20px;
             font-weight: 900;
@@ -92,7 +131,10 @@
             padding: 30px 25px;
             text-align: center;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            border: 4px solid white;
+           /* border: 4px solid white;*/
+
+            border: 4px solid var(--ac-card-border); /* 使用陳舊土色作為邊框 */
+
             margin-bottom: 25px;
             position: relative;
         }
@@ -108,7 +150,8 @@
             padding: 5px 20px;
             border-radius: 20px;
             font-weight: bold;
-            border: 3px solid white;
+            /*border: 3px solid white;*/
+            border: 3px solid var(--ac-card-border); /* 讓邊框更沈穩 */
             box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
         }
 
@@ -147,7 +190,9 @@
 
         .hero-desc {
             font-size: 1.5rem;
-            color: #8A7B70;
+            /*color: #8A7B70;*/
+            /* 將描述文字的顏色調整為更搭配主題的顏色 */
+            color: var(--ac-blue);
             margin-bottom: 20px;
             font-weight: bold;
         }
@@ -159,7 +204,9 @@
             gap: 15px;
             margin-top: 20px;
             padding-top: 20px;
-            border-top: 2px dashed #E0D8C0;
+            /*border-top: 2px dashed #E0D8C0;*/
+            /* 虛線分隔線使用陳舊土色 */
+        border-top: 2px dashed var(--ac-card-border);
         }
 
         .advice-item {
